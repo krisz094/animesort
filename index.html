@@ -1,35 +1,44 @@
 <!--BUTTS-->
-<script type="text/javascript" language="JavaScript"><!--
-function HideContent(d) {
-document.getElementById(d).style.display = "none";
-}
-function ShowContent(d) {
-document.getElementById(d).style.display = "block";
-}
-function ReverseDisplay(d) {
-if(document.getElementById(d).style.display == "none") { document.getElementById(d).style.display = "block"; }
-else { document.getElementById(d).style.display = "none"; }
-}
-//--></script>
+<script type="text/javascript" language="JavaScript">
+	<!--
+	function HideContent(d) {
+		document.getElementById(d).style.display = "none";
+	}
+
+	function ShowContent(d) {
+		document.getElementById(d).style.display = "block";
+	}
+
+	function ReverseDisplay(d) {
+		if (document.getElementById(d).style.display == "none") {
+			document.getElementById(d).style.display = "block";
+		} else {
+			document.getElementById(d).style.display = "none";
+		}
+	}
+	//-->
+</script>
 
 <style>
-.center {
-    margin-top: 48px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 700px;
-}
-p {
-    max-width: 700px;
-}
-body {
-    padding-bottom: 100px;
-}
-div {
-    text-align: justify;
-    text-justify: inter-word;
-}
-
+	.center {
+		margin-top: 48px;
+		margin-left: auto;
+		margin-right: auto;
+		width: 700px;
+	}
+	
+	p {
+		max-width: 700px;
+	}
+	
+	body {
+		padding-bottom: 100px;
+	}
+	
+	div {
+		text-align: justify;
+		text-justify: inter-word;
+	}
 </style>
 <!--<script src="http://assets.tumblr.com/assets/scripts/tumblelog_post_message_queue.js?_v=cf140c0f1704d59bad98d3be7adddfde"></script>
 
@@ -40,416 +49,441 @@ div {
 -->
 
 </head>
+
 <body>
-<font face="verdana">
-<div class="center">  
+	<font face="verdana">
+		<div class="center">
 
 
-<h2>What is this?</h2>
+			<h2>What is this?</h2>
 
-<div id="1" style="display:none;">
-<p>
-A guy <a href="http://slimedrippings.tumblr.com/gamefaqssort">over there</a> made a top list generating tool for video games, using the 128 best games of GameFAQs in 2015. My friend gave me an idea to do the same with anime series.
-</p>
-<p>
-I kinda "borrowed" the guy's code (meaning I stole it), and exchanged the list of video games with MyAnimeList's top 100 anime TV series.
-</p>
-</div>
+			<div id="1" style="display:none;">
+				<p>
+					A guy <a href="http://slimedrippings.tumblr.com/gamefaqssort">over there</a> made a top list generating tool for video games, using the 128 best games of GameFAQs in 2015. My friend gave me an idea to do the same with anime series.
+				</p>
+				<p>
+					I kinda "borrowed" the guy's code (meaning I stole it), and exchanged the list of video games with MyAnimeList's top 100 anime TV series.
+				</p>
+			</div>
 
-<a href="javascript:ReverseDisplay('1')">
+			<a href="javascript:ReverseDisplay('1')">
 [Click to show/hide]
 </a>
 
 
-<h2>Ok, how do I use this?</h2>
+			<h2>Ok, how do I use this?</h2>
 
 
-<div id="2" style="display:none;">
-<p>
-Just click on the name of whichever series you like more! If you love or hate both series equally, or simply dont know either of the series, click "I feel the same way about both".
-</p>
-</div>
+			<div id="2" style="display:none;">
+				<p>
+					Just click on the name of whichever series you like more! If you love or hate both series equally, or simply dont know either of the series, click "I feel the same way about both".
+				</p>
+			</div>
 
-<a href="javascript:ReverseDisplay('2')">
+			<a href="javascript:ReverseDisplay('2')">
 [Click to show/hide]
 </a>
 
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html lang="ja">
-<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# blog: http://ogp.me/ns/blog#">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta http-equiv="Content-Style-Type" content="text/css">
-<meta http-equiv="Content-Script-Type" content="text/javascript">
-<title>Sort some anime or something!</title>
-<script type="text/javascript">
-<!--
-//*********************************************************
-//
-// 評価するメンバーの名前のリスト
-//
-// この部分を変更して下さい。名前の削除・追加も可能です。
-// 名前を引用符(")で括り、コンマ(,)で区切って下さい。
-// 但し、リストの最後にはコンマを入れてはいけません。
-//
-// Add the names of the characters you wish to sort below.
-//
-// Names should be enclosed in quotation marks (").
-// Names should be separated by a comma (,).
-// However, do not put a comma at the end of the list.
-//
-//*********************************************************
-//
-// Code grabbed from the view-source: of 
-// http://blingbling.konjiki.jp/bbst.html
-// 
-// anime version by eris - I stole the code from http://slimedrippings.tumblr.com/gamefaqssort
-//
-// I do not know where the original code is from, sorry.
-// 
-// Most of the translations are from Google Translate.
-// Which is terrible, but what ya gonna do?
-// 
-//*********************************************************
-var namMember = new Array(
-//---------------------------------------------------------
-"Gintama°", "Fullmetal Alchemist: Brotherhood", "Steins;Gate", "Gintama'", "Hunter x Hunter (2011)", "Gintama': Enchousen", "Clannad: After Story", "Gintama", "Code Geass: Hangyaku no Lelouch R2", "Haikyuu!! Second Season", "Shigatsu wa Kimi no Uso (Your Lie in April)", "Mushishi Zoku Shou 2nd Season", "One Punch Man", "Hajime no Ippo", "Code Geass: Hangyaku no Lelouch", "Cowboy Bebop", "Monogatari Series: Second Season", "Mushishi Zoku Shou", "Tengen Toppa Gurren Lagann", "Mushishi", "Great Teacher Onizuka", "Re:Zero kara Hajimeru Isekai Seikatsu", "Fate/Zero 2nd Season", "Hajime no Ippo: New Challenger", "Natsume Yuujinchou Shi (Natsume's Book of Friends Season 4)", "Monster", "Bakuman. 3rd Season", "Death Note", "Boku dake ga Inai Machi (ERASED)", "Hajime no Ippo: Rising", "Haikyuu!!", "Natsume Yuujinchou San (Natsume's Book of Friends Season 3)", "Ping Pong The Animation", "Aria The Origination", "Yojouhan Shinwa Taikei (The Tatami Galaxy)", "Ansatsu Kyoushitsu (Assassination Classroom) 2nd Season", "Rainbow: Nisha Rokubou no Shichinin", "Ano Hi Mita Hana no Namae wo Bokutachi wa Mada Shiranai. (anohana: The Flower We Saw That Day)", "Kuroko no Basket 3rd Season", "Zoku Natsume Yuujinchou (Natsume's Book of Friends Season 2)", "Shokugeki no Souma (Food Wars!)", "Shouwa Genroku Rakugo Shinjuu", "JoJo's Bizarre Adventure: Stardust Crusaders 2nd Season", "Parasyte -the maxim- (Kiseijuu: Sei no Kakuritsu)", "Kuroko no Basket 2nd Season", "Space Brothers (Uchuu Kyoudai)", "Major S5", "One Piece", "Kingdom 2nd Season", "Ghost in the Shell: Stand Alone Complex 2nd GIG", "JoJo's Bizarre Adventure: Diamond is Unbreakable", "Attack on Titan (Shingeki no Kyojin)", "Shokugeki no Souma: Ni no Sara (Food Wars! 2nd Season)", "Usagi Drop", "Slam Dunk", "Baccano!", "Cross Game", "Nana", "Bakuman. 2nd Season", "Shinsekai yori (From the New World)", "Chihayafuru 2", "Fate/Zero", "JoJo's Bizarre Adventure (TV)", "Ace of Diamond: Second Season", "Mahou Shoujo Madoka Magica", "Nichijou (My Ordinary Life)", "Psycho-Pass", "Barakamon", "Magi: The Kingdom of Magic", "Katanagatari", "Major S6", "Noragami Aragoto", "Samurai Champloo", "Shirobako", "Hunter x Hunter (1999)", "Mononoke (TV series)", "Kuroko no Basket", "No Game No Life", "Nodame Cantabile", "Romeo no Aoi Sora", "Sakamichi no Apollon (Kids on the Slope)", "Ghost in the Shell: Stand Alone Complex", "Kemono no Souja Erin", "Kino no Tabi: The Beautiful World", "Yuu Yuu Hakusho", "Ashita no Joe 2 (Rocky Joe 2)", "Fate/stay night: Unlimited Blade Works 2nd Season", "Spice and Wolf 2nd Season (Ookami to Koushinryou II)", "Toradora!", "The Seven Deadly Sins (Nanatsu no Taizai)", "Fate/stay night: Unlimited Blade Works", "Owarimonogatari", "Rurouni Kenshin: Meiji Kenkaku Romantan", "Higurashi no Naku Koro ni (2nd Season)", "Major S1", "Major S2", "Natsume Yuujinchou (Natsume's Book of Friends)", "Rose of Versailles", "Angel Beats!", "Beck"
-);
-//*********************************************************
+			<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+			<html lang="ja">
 
-var lstMember = new Array();
-var parent = new Array();
-var equal = new Array();
-var rec = new Array();
-var cmp1,cmp2;
-var head1,head2;
-var nrec;
+			<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# blog: http://ogp.me/ns/blog#">
+				<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+				<meta http-equiv="Content-Style-Type" content="text/css">
+				<meta http-equiv="Content-Script-Type" content="text/javascript">
+				<title>Sort some anime or something!</title>
+				<script type="text/javascript">
+					<!--
+					//*********************************************************
+					//
+					// 評価するメンバーの名前のリスト
+					//
+					// この部分を変更して下さい。名前の削除・追加も可能です。
+					// 名前を引用符(")で括り、コンマ(,)で区切って下さい。
+					// 但し、リストの最後にはコンマを入れてはいけません。
+					//
+					// Add the names of the characters you wish to sort below.
+					//
+					// Names should be enclosed in quotation marks (").
+					// Names should be separated by a comma (,).
+					// However, do not put a comma at the end of the list.
+					//
+					//*********************************************************
+					//
+					// Code grabbed from the view-source: of 
+					// http://blingbling.konjiki.jp/bbst.html
+					// 
+					// anime version by eris - I stole the code from http://slimedrippings.tumblr.com/gamefaqssort
+					//
+					// I do not know where the original code is from, sorry.
+					// 
+					// Most of the translations are from Google Translate.
+					// Which is terrible, but what ya gonna do?
+					// 
+					//*********************************************************
+					var namMember = new Array(
+						//---------------------------------------------------------
+						"Gintama°", "Fullmetal Alchemist: Brotherhood", "Steins;Gate", "Gintama'", "Hunter x Hunter (2011)", "Gintama': Enchousen", "Clannad: After Story", "Gintama", "Code Geass: Hangyaku no Lelouch R2", "Haikyuu!! Second Season", "Shigatsu wa Kimi no Uso (Your Lie in April)", "Mushishi Zoku Shou 2nd Season", "One Punch Man", "Hajime no Ippo", "Code Geass: Hangyaku no Lelouch", "Cowboy Bebop", "Monogatari Series: Second Season", "Mushishi Zoku Shou", "Tengen Toppa Gurren Lagann", "Mushishi", "Great Teacher Onizuka", "Re:Zero kara Hajimeru Isekai Seikatsu", "Fate/Zero 2nd Season", "Hajime no Ippo: New Challenger", "Natsume Yuujinchou Shi (Natsume's Book of Friends Season 4)", "Monster", "Bakuman. 3rd Season", "Death Note", "Boku dake ga Inai Machi (ERASED)", "Hajime no Ippo: Rising", "Haikyuu!!", "Natsume Yuujinchou San (Natsume's Book of Friends Season 3)", "Ping Pong The Animation", "Aria The Origination", "Yojouhan Shinwa Taikei (The Tatami Galaxy)", "Ansatsu Kyoushitsu (Assassination Classroom) 2nd Season", "Rainbow: Nisha Rokubou no Shichinin", "Ano Hi Mita Hana no Namae wo Bokutachi wa Mada Shiranai. (anohana: The Flower We Saw That Day)", "Kuroko no Basket 3rd Season", "Zoku Natsume Yuujinchou (Natsume's Book of Friends Season 2)", "Shokugeki no Souma (Food Wars!)", "Shouwa Genroku Rakugo Shinjuu", "JoJo's Bizarre Adventure: Stardust Crusaders 2nd Season", "Parasyte -the maxim- (Kiseijuu: Sei no Kakuritsu)", "Kuroko no Basket 2nd Season", "Space Brothers (Uchuu Kyoudai)", "Major S5", "One Piece", "Kingdom 2nd Season", "Ghost in the Shell: Stand Alone Complex 2nd GIG", "JoJo's Bizarre Adventure: Diamond is Unbreakable", "Attack on Titan (Shingeki no Kyojin)", "Shokugeki no Souma: Ni no Sara (Food Wars! 2nd Season)", "Usagi Drop", "Slam Dunk", "Baccano!", "Cross Game", "Nana", "Bakuman. 2nd Season", "Shinsekai yori (From the New World)", "Chihayafuru 2", "Fate/Zero", "JoJo's Bizarre Adventure (TV)", "Ace of Diamond: Second Season", "Mahou Shoujo Madoka Magica", "Nichijou (My Ordinary Life)", "Psycho-Pass", "Barakamon", "Magi: The Kingdom of Magic", "Katanagatari", "Major S6", "Noragami Aragoto", "Samurai Champloo", "Shirobako", "Hunter x Hunter (1999)", "Mononoke (TV series)", "Kuroko no Basket", "No Game No Life", "Nodame Cantabile", "Romeo no Aoi Sora", "Sakamichi no Apollon (Kids on the Slope)", "Ghost in the Shell: Stand Alone Complex", "Kemono no Souja Erin", "Kino no Tabi: The Beautiful World", "Yuu Yuu Hakusho", "Ashita no Joe 2 (Rocky Joe 2)", "Fate/stay night: Unlimited Blade Works 2nd Season", "Spice and Wolf 2nd Season (Ookami to Koushinryou II)", "Toradora!", "The Seven Deadly Sins (Nanatsu no Taizai)", "Fate/stay night: Unlimited Blade Works", "Owarimonogatari", "Rurouni Kenshin: Meiji Kenkaku Romantan", "Higurashi no Naku Koro ni (2nd Season)", "Major S1", "Major S2", "Natsume Yuujinchou (Natsume's Book of Friends)", "Rose of Versailles", "Angel Beats!", "Beck"
+					);
+					//*********************************************************
 
-var numQuestion;
-var totalSize;
-var finishSize;
-var finishFlag;
+					var lstMember = new Array();
+					var parent = new Array();
+					var equal = new Array();
+					var rec = new Array();
+					var cmp1, cmp2;
+					var head1, head2;
+					var nrec;
 
-//変数の初期化+++++++++++++++++++++++++++++++++++++++++++++
-//(Variable initialization)++++++++++++++++++++++++++++++++
-function initList(){
-	var n = 0;
-	var mid;
-	var i;
+					var numQuestion;
+					var totalSize;
+					var finishSize;
+					var finishFlag;
 
-	//ソートすべき配列(Sequence to be sorted)
-	lstMember[n] = new Array();
-	for (i=0; i<namMember.length; i++) {
-		lstMember[n][i] = i;
-	}
-	parent[n] = -1;
-	totalSize = 0;
-	n++;
+					//変数の初期化+++++++++++++++++++++++++++++++++++++++++++++
+					//(Variable initialization)++++++++++++++++++++++++++++++++
+					function initList() {
+						var n = 0;
+						var mid;
+						var i;
 
-	for (i=0; i<lstMember.length; i++) {
-		//要素数が２以上なら２分割し、(???)
-		//分割された配列をlstMemberの最後に加える(???)
-		if(lstMember[i].length>=2) {
-			mid = Math.ceil(lstMember[i].length/2);
-			lstMember[n] = new Array();
-			lstMember[n] = lstMember[i].slice(0,mid);
-			totalSize += lstMember[n].length;
-			parent[n] = i;
-			n++;
-			lstMember[n] = new Array();
-			lstMember[n] = lstMember[i].slice(mid,lstMember[i].length);
-			totalSize += lstMember[n].length;
-			parent[n] = i;
-			n++;
-		}
-	}
+						//ソートすべき配列(Sequence to be sorted)
+						lstMember[n] = new Array();
+						for (i = 0; i < namMember.length; i++) {
+							lstMember[n][i] = i;
+						}
+						parent[n] = -1;
+						totalSize = 0;
+						n++;
 
-	//保存用配列(Storage array)
-	for (i=0; i<namMember.length; i++) {
-		rec[i] = 0;
-	}
-	nrec = 0;
+						for (i = 0; i < lstMember.length; i++) {
+							//要素数が２以上なら２分割し、(???)
+							//分割された配列をlstMemberの最後に加える(???)
+							if (lstMember[i].length >= 2) {
+								mid = Math.ceil(lstMember[i].length / 2);
+								lstMember[n] = new Array();
+								lstMember[n] = lstMember[i].slice(0, mid);
+								totalSize += lstMember[n].length;
+								parent[n] = i;
+								n++;
+								lstMember[n] = new Array();
+								lstMember[n] = lstMember[i].slice(mid, lstMember[i].length);
+								totalSize += lstMember[n].length;
+								parent[n] = i;
+								n++;
+							}
+						}
 
-	//引き分けの結果を保存するリスト(???)
-	//キー：リンク始点の値(???)
-	// 値 ：リンク終点の値(???)
-	for (i=0; i<=namMember.length; i++) {
-		equal[i] = -1;
-	}
+						//保存用配列(Storage array)
+						for (i = 0; i < namMember.length; i++) {
+							rec[i] = 0;
+						}
+						nrec = 0;
 
-	cmp1 = lstMember.length-2;
-	cmp2 = lstMember.length-1;
-	head1 = 0;
-	head2 = 0;
-	numQuestion = 1;
-	finishSize = 0;
-	finishFlag = 0;
-}
+						//引き分けの結果を保存するリスト(???)
+						//キー：リンク始点の値(???)
+						// 値 ：リンク終点の値(???)
+						for (i = 0; i <= namMember.length; i++) {
+							equal[i] = -1;
+						}
 
-//リストのソート+++++++++++++++++++++++++++++++++++++++++++
-//(Sort the list)++++++++++++++++++++++++++++++++++++++++++
-//flag：比較結果(flag: comparison result)
-//  -1：左を選択(Select the left)
-//   0：引き分け(Draws)
-//   1：右を選択(Choose the Right)
-function sortList(flag){
-	var i;
-	var str;
+						cmp1 = lstMember.length - 2;
+						cmp2 = lstMember.length - 1;
+						head1 = 0;
+						head2 = 0;
+						numQuestion = 1;
+						finishSize = 0;
+						finishFlag = 0;
+					}
 
-	//recに保存(Save the rec)
-	if (flag<0) {
-		rec[nrec] = lstMember[cmp1][head1];
-		head1++;
-		nrec++;
-		finishSize++;
-		while (equal[rec[nrec-1]]!=-1) {
-			rec[nrec] = lstMember[cmp1][head1];
-			head1++;
-			nrec++;
-			finishSize++;
-		}
-	}
-	else if (flag>0) {
-		rec[nrec] = lstMember[cmp2][head2];
-		head2++;
-		nrec++;
-		finishSize++;
-		while (equal[rec[nrec-1]]!=-1) {
-			rec[nrec] = lstMember[cmp2][head2];
-			head2++;
-			nrec++;
-			finishSize++;
-		}
-	}
-	else {
-		rec[nrec] = lstMember[cmp1][head1];
-		head1++;
-		nrec++;
-		finishSize++;
-		while (equal[rec[nrec-1]]!=-1) {
-			rec[nrec] = lstMember[cmp1][head1];
-			head1++;
-			nrec++;
-			finishSize++;
-		}
-		equal[rec[nrec-1]] = lstMember[cmp2][head2];
-		rec[nrec] = lstMember[cmp2][head2];
-		head2++;
-		nrec++;
-		finishSize++;
-		while (equal[rec[nrec-1]]!=-1) {
-			rec[nrec] = lstMember[cmp2][head2];
-			head2++;
-			nrec++;
-			finishSize++;
-		}
-	}
+					//リストのソート+++++++++++++++++++++++++++++++++++++++++++
+					//(Sort the list)++++++++++++++++++++++++++++++++++++++++++
+					//flag：比較結果(flag: comparison result)
+					//  -1：左を選択(Select the left)
+					//   0：引き分け(Draws)
+					//   1：右を選択(Choose the Right)
+					function sortList(flag) {
+						var i;
+						var str;
 
-	//片方のリストを走査し終えた後の処理
-	//(Processing after it has finished scanning the list of one)
-	if (head1<lstMember[cmp1].length && head2==lstMember[cmp2].length) {
-		//リストcmp2が走査済 - リストcmp1の残りをコピー
-		//(Cmp2 list is scanned - copy the rest of the list cmp1)
-		while (head1<lstMember[cmp1].length){
-			rec[nrec] = lstMember[cmp1][head1];
-			head1++;
-			nrec++;
-			finishSize++;
-		}
-	}
-	else if (head1==lstMember[cmp1].length && head2<lstMember[cmp2].length) {
-		//リストcmp1が走査済 - リストcmp2の残りをコピー
-		//(Cmp1 list is scanned - copy the rest of the list cmp2)
-		while (head2<lstMember[cmp2].length){
-			rec[nrec] = lstMember[cmp2][head2];
-			head2++;
-			nrec++;
-			finishSize++;
-		}
-	}
+						//recに保存(Save the rec)
+						if (flag < 0) {
+							rec[nrec] = lstMember[cmp1][head1];
+							head1++;
+							nrec++;
+							finishSize++;
+							while (equal[rec[nrec - 1]] != -1) {
+								rec[nrec] = lstMember[cmp1][head1];
+								head1++;
+								nrec++;
+								finishSize++;
+							}
+						} else if (flag > 0) {
+							rec[nrec] = lstMember[cmp2][head2];
+							head2++;
+							nrec++;
+							finishSize++;
+							while (equal[rec[nrec - 1]] != -1) {
+								rec[nrec] = lstMember[cmp2][head2];
+								head2++;
+								nrec++;
+								finishSize++;
+							}
+						} else {
+							rec[nrec] = lstMember[cmp1][head1];
+							head1++;
+							nrec++;
+							finishSize++;
+							while (equal[rec[nrec - 1]] != -1) {
+								rec[nrec] = lstMember[cmp1][head1];
+								head1++;
+								nrec++;
+								finishSize++;
+							}
+							equal[rec[nrec - 1]] = lstMember[cmp2][head2];
+							rec[nrec] = lstMember[cmp2][head2];
+							head2++;
+							nrec++;
+							finishSize++;
+							while (equal[rec[nrec - 1]] != -1) {
+								rec[nrec] = lstMember[cmp2][head2];
+								head2++;
+								nrec++;
+								finishSize++;
+							}
+						}
 
-	//両方のリストの最後に到達した場合は
-	//(If you reach the end of the list of both)
-	//親リストを更新する(I want to update the parent list)
-	if (head1==lstMember[cmp1].length && head2==lstMember[cmp2].length) {
-		for (i=0; i<lstMember[cmp1].length+lstMember[cmp2].length; i++) {
-			lstMember[parent[cmp1]][i] = rec[i];
-		}
-		lstMember.pop();
-		lstMember.pop();
-		cmp1 = cmp1-2;
-		cmp2 = cmp2-2;
-		head1 = 0;
-		head2 = 0;
+						//片方のリストを走査し終えた後の処理
+						//(Processing after it has finished scanning the list of one)
+						if (head1 < lstMember[cmp1].length && head2 == lstMember[cmp2].length) {
+							//リストcmp2が走査済 - リストcmp1の残りをコピー
+							//(Cmp2 list is scanned - copy the rest of the list cmp1)
+							while (head1 < lstMember[cmp1].length) {
+								rec[nrec] = lstMember[cmp1][head1];
+								head1++;
+								nrec++;
+								finishSize++;
+							}
+						} else if (head1 == lstMember[cmp1].length && head2 < lstMember[cmp2].length) {
+							//リストcmp1が走査済 - リストcmp2の残りをコピー
+							//(Cmp1 list is scanned - copy the rest of the list cmp2)
+							while (head2 < lstMember[cmp2].length) {
+								rec[nrec] = lstMember[cmp2][head2];
+								head2++;
+								nrec++;
+								finishSize++;
+							}
+						}
 
-		//新しい比較を行う前にrecを初期化
-		//(Initialize the rec before you make a new comparison)
-		if (head1==0 && head2==0) {
-			for (i=0; i<namMember.length; i++) {
-				rec[i] = 0;
-			}
-			nrec = 0;
-		}
-	}
+						//両方のリストの最後に到達した場合は
+						//(If you reach the end of the list of both)
+						//親リストを更新する(I want to update the parent list)
+						if (head1 == lstMember[cmp1].length && head2 == lstMember[cmp2].length) {
+							for (i = 0; i < lstMember[cmp1].length + lstMember[cmp2].length; i++) {
+								lstMember[parent[cmp1]][i] = rec[i];
+							}
+							lstMember.pop();
+							lstMember.pop();
+							cmp1 = cmp1 - 2;
+							cmp2 = cmp2 - 2;
+							head1 = 0;
+							head2 = 0;
 
-	if (cmp1<0) {
-		str = "Battle No."+(numQuestion-1)+"<br>"+Math.floor(finishSize*100/totalSize)+"% sorted.";
-		document.getElementById("battleNumber").innerHTML = str;
+							//新しい比較を行う前にrecを初期化
+							//(Initialize the rec before you make a new comparison)
+							if (head1 == 0 && head2 == 0) {
+								for (i = 0; i < namMember.length; i++) {
+									rec[i] = 0;
+								}
+								nrec = 0;
+							}
+						}
 
-		showResult();
-		finishFlag = 1;
-	}
-	else {
-		showImage();
-	}
-}
+						if (cmp1 < 0) {
+							str = "Battle No." + (numQuestion - 1) + "<br>" + Math.floor(finishSize * 100 / totalSize) + "% sorted.";
+							document.getElementById("battleNumber").innerHTML = str;
 
-//結果の表示+++++++++++++++++++++++++++++++++++++++++++++++
-//(View Results)+++++++++++++++++++++++++++++++++++++++++++
-function showResult() {
-	var ranking = 1;
-	var sameRank = 1;
-	var str = "";
-	var i;
+							showResult();
+							finishFlag = 1;
+						} else {
+							showImage();
+						}
+					}
 
-	str += "<table style=\"width:200px; font-size:12px; line-height:120%; margin-left:auto; margin-right:auto; border:1px solid #000; border-collapse:collapse\" align=\"center\">";
-	str += "<tr><td style=\"color:#ffffff; background-color:#000; text-align:center;\">Rank<\/td><td style=\"color:#ffffff; background-color:#000; text-align:center;\">Series<\/td><\/tr>";
+					//結果の表示+++++++++++++++++++++++++++++++++++++++++++++++
+					//(View Results)+++++++++++++++++++++++++++++++++++++++++++
+					function showResult() {
+						var ranking = 1;
+						var sameRank = 1;
+						var str = "";
+						var i;
 
-	for (i=0; i<namMember.length; i++) {
-		str += "<tr><td style=\"border:1px solid #000; text-align:right; padding-right:5px;\">"+ranking+"<\/td><td style=\"border:1px solid #000; padding-left:5px;\">"+namMember[lstMember[0][i]]+"<\/td><\/tr>";
-		if (i<namMember.length-1) {
-			if (equal[lstMember[0][i]]==lstMember[0][i+1]) {
-				sameRank++;
-			} else {
-				ranking += sameRank;
-				sameRank = 1;
-			}
-		}
-	}
-	str += "<\/table>";
+						str += "<table style=\"width:200px; font-size:12px; line-height:120%; margin-left:auto; margin-right:auto; border:1px solid #000; border-collapse:collapse\" align=\"center\">";
+						str += "<tr><td style=\"color:#ffffff; background-color:#000; text-align:center;\">Rank<\/td><td style=\"color:#ffffff; background-color:#000; text-align:center;\">Series<\/td><\/tr>";
 
-	document.getElementById("resultField").innerHTML = str;
-}
+						for (i = 0; i < namMember.length; i++) {
+							str += "<tr><td style=\"border:1px solid #000; text-align:right; padding-right:5px;\">" + ranking + "<\/td><td style=\"border:1px solid #000; padding-left:5px;\">" + namMember[lstMember[0][i]] + "<\/td><\/tr>";
+							if (i < namMember.length - 1) {
+								if (equal[lstMember[0][i]] == lstMember[0][i + 1]) {
+									sameRank++;
+								} else {
+									ranking += sameRank;
+									sameRank = 1;
+								}
+							}
+						}
+						str += "<\/table>";
 
-//比較する２つ要素の表示+++++++++++++++++++++++++++++++++++
-//(Display of two elements to be compared)+++++++++++++++++
-function showImage() {
-	var str0 = "Battle No."+numQuestion+"<br>"+Math.floor(finishSize*100/totalSize)+"% sorted.";
-	var str1 = ""+toNameFace(lstMember[cmp1][head1]);
-	var str2 = ""+toNameFace(lstMember[cmp2][head2]);
+						document.getElementById("resultField").innerHTML = str;
+					}
 
-	document.getElementById("battleNumber").innerHTML = str0;
-	document.getElementById("leftField").innerHTML = str1;
-	document.getElementById("rightField").innerHTML = str2;
+					//比較する２つ要素の表示+++++++++++++++++++++++++++++++++++
+					//(Display of two elements to be compared)+++++++++++++++++
+					function showImage() {
+						var str0 = "Battle No." + numQuestion + "<br>" + Math.floor(finishSize * 100 / totalSize) + "% sorted.";
+						var str1 = "" + toNameFace(lstMember[cmp1][head1]);
+						var str2 = "" + toNameFace(lstMember[cmp2][head2]);
 
-	numQuestion++;
-}
+						document.getElementById("battleNumber").innerHTML = str0;
+						document.getElementById("leftField").innerHTML = str1;
+						document.getElementById("rightField").innerHTML = str2;
 
-//数値を名前（顔文字）に変換+++++++++++++++++++++++++++++++
-//Convert name to (emoticons) a number+++++++++++++++++++++
+						numQuestion++;
+					}
 
-function toNameFace(n){
-	var str = namMember[n];
+					//数値を名前（顔文字）に変換+++++++++++++++++++++++++++++++
+					//Convert name to (emoticons) a number+++++++++++++++++++++
 
-	//顔文字を追加する場合は以下のコメントアウトを外す
-	//namMemberのインデックスと矛盾しないように注意
-	/*
-	str += "<br>────<br>";
-	switch(n) {
-		//case -1 はサンプルなので削除すること
-		case -1: str+="（ ´∀｀）";break;
-		default: str+=""+n;
-	}
-	*/
-	return str;
-}
-//-->
-</script>
-<style type="text/css">
-<!--
-/**********************************************************
+					function toNameFace(n) {
+						var str = namMember[n];
+
+						//顔文字を追加する場合は以下のコメントアウトを外す
+						//namMemberのインデックスと矛盾しないように注意
+						/*
+						str += "<br>────<br>";
+						switch(n) {
+							//case -1 はサンプルなので削除すること
+							case -1: str+="（ ´∀｀）";break;
+							default: str+=""+n;
+						}
+						*/
+						return str;
+					}
+					//-->
+				</script>
+				<style type="text/css">
+					<!--
+					/**********************************************************
 
  表のスタイルを変更する場合はここを編集してください。
  Please edit here if you want to change the style of the table.
  
 **********************************************************/
-iframe {display:none !important;}
-#mainTable{
-	-webkit-touch-callout: none; 
-	-webkit-user-select: none;   
-	-khtml-user-select: none;    
-	-moz-user-select: none;      
-	-ms-user-select: none;       
-	user-select: none;           
-	font-size: 16px;
-	font-family: sans-serif;
-	text-align: center;
-	vertical-align: middle;
-	width: 410px;
-	margin-left: auto;
-	margin-right: auto;
-	border-collapse: separate;
-	border-spacing: 10px 5px;
-}
-#leftField{
-	width: 120px;
-	height: 150px;
-	border: 1px solid #000;
-	cursor: pointer;
-}
-#rightField{
-	width: 120px;
-	height: 150px;
-	border: 1px solid #000;
-	cursor: pointer;
-}
-.middleField{
-	width: 120px;
-	height: 70px;
-	border: 1px solid #000;
-	cursor: pointer;
-}
-//-->
-</style>
-<style type="text/css">figure {margin: 0;}</style>
-<style>figure{margin:0}.tmblr-iframe{position:absolute}.tmblr-iframe.hide{display:none}</style>
-<link rel="stylesheet" type="text/css" href="http://st.shinobi.jp/img/services/homepage/commercial.css" /><meta name="robots" content="noindex"/>
+					
+					iframe {
+						display: none !important;
+					}
+					
+					#mainTable {
+						-webkit-touch-callout: none;
+						-webkit-user-select: none;
+						-khtml-user-select: none;
+						-moz-user-select: none;
+						-ms-user-select: none;
+						user-select: none;
+						font-size: 16px;
+						font-family: sans-serif;
+						text-align: center;
+						vertical-align: middle;
+						width: 410px;
+						margin-left: auto;
+						margin-right: auto;
+						border-collapse: separate;
+						border-spacing: 10px 5px;
+					}
+					
+					#leftField {
+						width: 120px;
+						height: 150px;
+						border: 1px solid #000;
+						cursor: pointer;
+					}
+					
+					#rightField {
+						width: 120px;
+						height: 150px;
+						border: 1px solid #000;
+						cursor: pointer;
+					}
+					
+					.middleField {
+						width: 120px;
+						height: 70px;
+						border: 1px solid #000;
+						cursor: pointer;
+					}
+					
+					//-->
+				</style>
+				<style type="text/css">
+					figure {
+						margin: 0;
+					}
+				</style>
+				<style>
+					figure {
+						margin: 0
+					}
+					
+					.tmblr-iframe {
+						position: absolute
+					}
+					
+					.tmblr-iframe.hide {
+						display: none
+					}
+				</style>
+				<link rel="stylesheet" type="text/css" href="http://st.shinobi.jp/img/services/homepage/commercial.css" />
+				<meta name="robots" content="noindex" />
 
-<script src="http://assets.tumblr.com/assets/scripts/tumblelog.js?_v=454fc1618d865ba96c0749de3c9277c9"></script>
+				<script src="http://assets.tumblr.com/assets/scripts/tumblelog.js?_v=454fc1618d865ba96c0749de3c9277c9"></script>
 
-<link rel="stylesheet" type="text/css" href="http://assets.tumblr.com/fonts/gibson/stylesheet.css?v=3">
+				<link rel="stylesheet" type="text/css" href="http://assets.tumblr.com/fonts/gibson/stylesheet.css?v=3">
 
-</head>
+			</head>
 
-<body>
+			<body>
 
-<table id="mainTable" align="center">
-	<tr>
-		<td id="battleNumber" colspan="3" style="padding-bottom: 10px;">
-			&nbsp;
-		</td>
-	</tr>
-	<tr>
-		<td id="leftField" onClick="if(finishFlag==0)sortList(-1);" rowspan="2">
-			&nbsp;
-		</td>
-		<td class="middleField" onClick="if(finishFlag==0)sortList(0);">
-			I feel the same way about both
-		</td>
-		<td id="rightField" onClick="if(finishFlag==0)sortList(1);" rowspan="2">
-			&nbsp;
-		</td>
-	</tr>
-	
-	</tr>
-</table><br><br>
-<div id="resultField" style="text-align:center;">
-</div>
-<script type="text/javascript">
-<!--
-	initList();
-	showImage();
-//-->
-</script>
-</ul>
-</body></html>
+				<table id="mainTable" align="center">
+					<tr>
+						<td id="battleNumber" colspan="3" style="padding-bottom: 10px;">
+							&nbsp;
+						</td>
+					</tr>
+					<tr>
+						<td id="leftField" onClick="if(finishFlag==0)sortList(-1);" rowspan="2">
+							&nbsp;
+						</td>
+						<td class="middleField" onClick="if(finishFlag==0)sortList(0);">
+							I feel the same way about both
+						</td>
+						<td id="rightField" onClick="if(finishFlag==0)sortList(1);" rowspan="2">
+							&nbsp;
+						</td>
+					</tr>
+
+					</tr>
+				</table><br><br>
+				<div id="resultField" style="text-align:center;">
+				</div>
+				<script type="text/javascript">
+					<!--
+					initList();
+					showImage();
+					//-->
+				</script>
+				</ul>
+			</body>
+
+			</html>
